@@ -1,11 +1,16 @@
 import pygame
+import sys
 import os
+from pygame.locals import *
 pygame.font.init()
 pygame.mixer.init()
 
+pygame.init()
+running = True
+
 WIDTH, HEIGHT = 900, 500
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("My First Game!")
+pygame.display.set_caption("Aldyz car game")
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -29,8 +34,7 @@ SPACESHIP_WIDTH, SPACESHIP_HEIGHT = 55, 40
 YELLOW_HIT = pygame.USEREVENT + 1
 RED_HIT = pygame.USEREVENT + 2
 
-YELLOW_SPACESHIP_IMAGE = pygame.image.load(
-    os.path.join('Assets', 'spaceship_white.png'))
+YELLOW_SPACESHIP_IMAGE = pygame.image.load(os.path.join('Assets', 'spaceship_white.png'))
 YELLOW_SPACESHIP = pygame.transform.rotate(pygame.transform.scale(
     YELLOW_SPACESHIP_IMAGE, (SPACESHIP_WIDTH, SPACESHIP_HEIGHT)), 90)
 
